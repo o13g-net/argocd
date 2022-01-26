@@ -2,6 +2,10 @@ FROM quay.io/argoproj/argocd:v2.2.2
 # Switch to root for the ability to perform install
 USER root
 
+# Add internal root CA cert
+ADD o13g-root-ca.crt /usr/local/share/ca-certificates/o13g-root-ca.crt
+RUN chmod 644 /usr/local/share/ca-certificates/o13g-root-ca.crt && update-ca-certificates
+
 # Install tools needed for your repo-server to retrieve & decrypt secrets, render manifests
 # (e.g. curl, awscli, gpg, sops)
 RUN apt-get update && \
