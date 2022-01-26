@@ -1,4 +1,4 @@
-FROM docker.io/argoproj/argocd:latest
+FROM quay.io/argoproj/argocd:v2.2.2
 # Switch to root for the ability to perform install
 USER root
 
