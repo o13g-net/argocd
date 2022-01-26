@@ -17,5 +17,5 @@ RUN curl -L -o argocd-vault-plugin https://github.com/argoproj-labs/argocd-vault
     chmod +x argocd-vault-plugin && \
     mv argocd-vault-plugin /usr/local/bin
 
-# Switch back to non-root user
-USER argocd
+# Switch back to non-root user (argocd = 999)
+USER 999
