@@ -1,4 +1,4 @@
-FROM quay.io/argoproj/argocd:v2.2.2
+FROM quay.io/argoproj/argocd:v2.3.1
 # Switch to root for the ability to perform install
 USER root
 
@@ -17,7 +17,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install the AVP plugin (as root so we can copy to /usr/local/bin)
-RUN curl -L -o argocd-vault-plugin https://github.com/argoproj-labs/argocd-vault-plugin/releases/download/v1.7.0/argocd-vault-plugin_1.7.0_linux_amd64 && \
+RUN curl -L -o argocd-vault-plugin https://github.com/argoproj-labs/argocd-vault-plugin/releases/download/v1.9.0/argocd-vault-plugin_1.9.0_linux_amd64 && \
     chmod +x argocd-vault-plugin && \
     mv argocd-vault-plugin /usr/local/bin
 
